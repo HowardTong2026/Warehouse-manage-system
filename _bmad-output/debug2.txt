@@ -1,0 +1,32 @@
+## 5. Technical Architecture
+
+```
+┌─────────────────┐     HTTP/REST      ┌─────────────────┐     SQL      ┌─────────────┐
+│  Frontend       │ ◄─────────────────► │  Backend        │ ◄───────────► │  Database   │
+│  (index.html)   │   fetch() / JSON    │  (Flask)        │  psycopg2    │  (PostgreSQL│
+│  Vanilla JS     │                     │  app.py         │              │   AIlearn)  │
+└─────────────────┘                     └─────────────────┘              └─────────────┘
+                                              │
+                                              ▼
+                                    ┌─────────────────┐
+                                    │  Services Layer │
+                                    │  - product_svc  │
+                                    │  - stock_svc    │
+                                    │  - alert_svc    │
+                                    │  - salesperson_svc│
+                                    │  - report_svc   │  ← NEW: 業績報表
+                                    └─────────────────┘
+```
+
+**Stack:**
+- **Backend:** Python 3.10+, Flask 3.x, **Flask-SQLAlchemy**, **Flask-Migrate**, psycopg2-binary, python-dotenv
+- **Database:** PostgreSQL 18 (running on localhost:5432, db: AIlearn, user: postgres) — **managed via Flask-Migrate migrations**
+- **Frontend:** **React 18** (Vite + TypeScript), Tailwind CSS, **Axios** for API calls
+- **Config:** `.env` for DB credentials; `flask` CLI for migrations
+
+**Architecture Mapping (per PPTX):**
+- **Model:** `models/*.py` (SQLAlchemy ORM) + `services/*_service.py` (business logic)
+- **View:** React components in `frontend/src/components/` + `frontend/src/pages/`
+- **Controller:** Flask routes in `routes/*.py` (REST API) + React custom hooks (`useProducts`, `useStock`, `useReports`)
+
+---

@@ -1,0 +1,6 @@
+Match: False
+Actual length: 1787
+Expected length: 1791
+FAILED: No match
+Actual first 500: '## 5. Technical Architecture\n\n```\n┌─────────────────┐     HTTP/REST      ┌─────────────────┐     SQL      ┌─────────────┐\n│  Frontend       │ ◄─────────────────► │  Backend        │ ◄───────────► │  Database   │\n│  (index.html)   │   fetch() / JSON    │  (Flask)        │  psycopg2    │  (PostgreSQL│\n│  Vanilla JS     │                     │  app.py         │              │   AIlearn)  │\n└─────────────────┘                     └─────────────────┘              └─────────────┘\n                     '
+Expected first 500: '## 5. Technical Architecture\n\n```\n┌─────────────────┐     HTTP/REST      ┌─────────────────┐     SQL      ┌─────────────┐\n│  Frontend       │ ◄─────────────────► │  Backend        │ ◄───────────► │  Database   │\n│  (index.html)   │   fetch() / JSON    │  (Flask)        │  psycopg2    │  (PostgreSQL│\n│  Vanilla JS     │                     │  app.py         │              │   AIlearn)  │\n└─────────────────┘                     └─────────────────┘              └─────────────┘\n                     '

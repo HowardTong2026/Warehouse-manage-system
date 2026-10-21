@@ -1,0 +1,7 @@
+26615
+## 5. Technical Architecture
+
+```
+┌─────────────────┐     HTTP/REST      ┌─────────────────┐     SQL      ┌─────────────┐
+│  Frontend       │ ◄─────────────────► │  Backend        │ ◄───────────► │  Database   │
+│  (index.html)   │   fetch() / JSON    │  (Flask)        │  psycopg2    │  (PostgreSQL│
